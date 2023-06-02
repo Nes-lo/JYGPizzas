@@ -27,7 +27,7 @@ hs_err_pid*
 *.iws
 *.iml
 *.ipr
-
+.settings
 ### Eclipse ###
 .classpath
 .project
@@ -36,5 +36,6 @@ hs_err_pid*
 /.gradle/
 /build/
 /target/
+/bin/
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
