@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+
+</head>
+<body>
+<header th:replace="plantilla/template :: header"></header>
+
+
+<div class="container">
+    <h2 class="mb-4">Cambiar Contraseña</h2>
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-3 bg-light rounded">
+                <form th:action="@{/usrs/editPass}" th:object="${user}" method="post" class="row g-3" id="formNewItem">
+
+                    <input type="hidden" th:field="*{id}">
+                    <div class="col-md-12">
+                        <label for="passAnt" class="form-label">Contraseña Actual</label>
+                        <input type="password" class="form-control" id="passAnt" th:name="passAnt" required><br>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="password" class="form-label">Nueva Contraseña</label>
+                        <input type="password" class="form-control" id="password" th:field="*{password}" required><br>
+                        <small class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="confirmPassword" class="form-label">Confirme Contraseña</label>
+                        <input type="password" th:field="*{confirmPassword}" class="form-control" id="confirmPassword"  required><br>
+                        <small class="form-text text-danger" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></small>
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        <button class="btn btn-secondary" type="submit">Cambiar Contraseña</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+</div>
+
+<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>l>
